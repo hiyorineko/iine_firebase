@@ -1,17 +1,29 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div id="app">
+  <img src="./assets/logo.png">
+  <h1>{{ msg }}</h1>
+  <hr>
+  <div>Page transition to</div>
+  <div>
+    <router-link to="/A">A</router-link>
+    <router-link to="/B">B</router-link>
+    <router-link to="/C">C</router-link>
   </div>
+  <div>Back to
+    <router-link to="/">home</router-link>
+  </div>
+  <hr>
+  <router-view></router-view>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
   }
 }
 </script>
@@ -24,5 +36,24 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+h1,
+h2 {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
+  color: #42b983;
 }
 </style>
